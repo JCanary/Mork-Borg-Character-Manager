@@ -1,0 +1,4 @@
+Console.WriteLine("Mork Borg Character Tracker");
+Console.WriteLine("(New) Character or (Load) Existing Character?: ");
+string? selection = Console.ReadLine();
+Console.WriteLine(selection);
