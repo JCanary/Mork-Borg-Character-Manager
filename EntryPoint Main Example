@@ -1,0 +1,22 @@
+/* 
+using allows this .cs file to use other .cs files by calling their
+namespace. Namespace has to be established in the other file
+*/
+using New;
+
+// Creating a class for Main to go in
+class MorkBorgGen
+{
+    // Standard Main assignment. Need to learn more about what the keywords mean
+    public static void Main()
+    {
+        /* 
+        just like making a new instance of the Random class, you have to 
+        make instances of classes. Here test becomes the shorthand for the 
+        Generate Class that is contained within the New.cs file
+        */
+        var test = new Generate();
+        // calling the NewCharacter Method with test as my stand in for Generate
+        test.NewCharacter();
+    }
+}
