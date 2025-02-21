@@ -1,0 +1,13 @@
+// Establishing the namespace that this file is referenced by
+namespace New
+{
+    // Class that will be called. gets assigned a name in Main when initialized
+    class Generate
+    {
+        // first method. Called with Generate.NewCharacter()
+        public void NewCharacter()
+        {
+            Console.WriteLine("Test");
+        }
+    }
+}
