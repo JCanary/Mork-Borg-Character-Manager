@@ -1,0 +1,5 @@
+Main links to Generate
+
+Generate has methods for New Char and Load Char
+
+Load char lists existing chars within a folder, displays their stats, lets stats be changed, and allows the user to print chars
