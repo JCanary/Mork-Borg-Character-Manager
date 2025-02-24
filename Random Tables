@@ -1,0 +1,118 @@
+var dice = new Random();
+
+var randomAbilitySelection = new Dictionary<int, string>
+{
+    {0, "Agility"},
+    {1, "Presence"},
+    {2, "Strength"},
+    {3, "Toughness"}
+};
+
+var occultTreasures = new Dictionary<int, string>
+{
+    {0, "ASH-GREY RING a finger-width wide. All that passes through is obliterated."},
+    {1, "The keening music of this small, VILE FLUTE animates a fetus-sized meat golem in a nearby corpse. (HP 5, Morale -, No Armor, Bite D4, immune to powers)"},
+    {2, "A note explains: one taste from this FAMINE SPOON means death from slow starvation."},
+    {3, "The image of a being in this malevolently-accurate MIRROR shows only the shameful truth of their soul."},
+    {4, "VAMPIRIC PHURBA. Heals you as it harms your target (D3), but beware: after stealing a total of 6 HP, test Presence DR14 or become addicted - you must then test Presence DR12 daily. Fail and you must stab someone with the knife before next sunrise. Or wither to ash and die as the sun rises"},
+    {5, "A black PEARL. If dropped in darkness it rolls toward the nearest exit to day."},
+    {6, "This TORCH burns for an immortal hour. Hold it and live. You can lose limbs and enter negative HP but won't die unless you drop the torch or it burns out."},
+    {7, "Silver BIRD CAGE slays whatever is placed behind its bars, slowly, over one long night. That which is killed reanimates twice as strong, as a raging uncontrollable undead."},
+    {8, "BLACK CROWN OF THE CRIPPLED KING. Wearing this crooks your body as you become aware that you and every creature within 100 yards gain +10 to attack rolls but -10 to defence rolls. Rolls that go above 20 count as crits, and below 1 as fumbles. The worn crown can only be removed in the pale light of a full moon."},
+    {9, "Anyone wearing this ancient BLINDFOLD becomes invisible to those who breathe though undead attack them obsessively and nearby corpses awaken in moaning, unholy wrath."}
+};
+
+var trapsAndDevilry = new Dictionary<int, string>
+{
+    {0, "Well dressed corpse, booby trapped"},
+    {1, "Wall-holes shoot poisonous arrows"},
+    {2, "Bells and marbles on the floor"},
+    {3, "Scorpion-filled basket poised to fall"},
+    {4, "Fish hooks hanging at eye level"},
+    {5, "Chest marked with explosive runes"},
+    {6, "Lock trapped with a vial of poison gas"},
+    {7, "Jewel removal leads to roof collapse"},
+    {8, "Slanted floor, translucent oil, pit"},
+    {9, "Snake-cages on collapsing ceiling tiles"},
+    {10, "Evil urns release cold ghosts"},
+    {11, "Coins coated in grime and poison"}
+};
+
+// could include more tables to expand on these descriptions
+var weather = new Dictionary<int, string>
+{
+    {0, "Lifeless grey"},
+    {1, "Hammering rain"},
+    {2, "Piercing wind"},
+    {3, "Deafening storm"},
+    {4, "Black as night"},
+    {5, "Dead quiet"},
+    {6, "Cloudburst"},
+    {7, "Soup-thick mist"},
+    {8, "Crackling frost"},
+    {9, "Irritating drizzle"},
+    {10, "Roaring thunder"},
+    {11, "Gravelike cold"}
+};
+
+// Corpse Plundering Table, need to change randomization to happen when the result is called instead of at the start of the program
+int corpsePlunderingRoll = 15; //dice.Next(0, 36);
+if (corpsePlunderingRoll <= 5)
+{
+    corpsePlunderingRoll = 0;
+}
+else if (corpsePlunderingRoll >= 30)
+{
+
+    corpsePlunderingRoll = 30;
+}
+
+int witchHunter;
+string witchHunterResult = "";
+if (corpsePlunderingRoll == 15)
+{
+    witchHunter = dice.Next(0, 2);
+    switch (witchHunter)
+    {
+        case 0:
+            witchHunterResult = "liked";
+            break;
+        case 1:
+            witchHunterResult = "despised";
+            break;
+    }
+}
+int randomAbilityResult = dice.Next(0, 4);
+
+var corpsePlundering = new Dictionary<int, string>
+{
+    {0, "The remains of something worthless crumbles in your hands."},
+    {6, "Pot filled with extremely potent itching ointment."},
+    {7, "Necklace of human teeth."},
+    {8, "Bag of angry, venomous moths. Test Toughness DR6 or die."},
+    {9, $"Pocket full of broken glass, PC takes {dice.Next(1, 3)} damage."},
+    {10, "Mad Manifesto. If read, test Presence DR12 or lose 1 Presence permenently from confusion."},
+    {11, "Key to nearby locked door. Stolen."},
+    {12, "Map to a weak but wealthy family's house."},
+    {13, "A hopeless amount of spiders."},
+    {14, "Metal cylinder with gunpowder and fuse. Roll a D6. 1-2 you lose a hand. 3-6 3D10 damage wherever it lands."},
+    {15, $"Known and {witchHunterResult} witch-hunter's face. Flayed."},
+    {16, "Note with PC's names. One is crossed out."},
+    {17, "Tortured pixie with torn-off winds and gouged out eyes."},
+    {18, "Map to a place that cannot possibly exist."},
+    {19, "Unmarked bottle with a liquid that shifts between red and green."},
+    {20, "Bond. A local potentate owes the holder a sizable amount."},
+    {21, "Death mask of one of the PCs"},
+    {22, "The 'Water of Life.' Heals D8. Test Toughness DR10 or go blind. Highly alcoholic."},
+    {23, $"There was something very wrong with this one. Hands covered with something lukewarm, brown and acidic. Take {dice.Next(1, 3) + 1} damage and smell terrible for {dice.Next(1, 5)} days."},
+    {24, "Black Kergus dagger. 2D4 damage."},
+    {25, $"Labelled poison bottle. Test Toughness DR12 or lower {randomAbilitySelection[randomAbilityResult]}. This ability can be increased when your character is improved."},
+    {26, ""},
+    {27, ""},
+    {28, ""},
+    {29, ""},
+    {30, ""}
+};
+
+Console.WriteLine(corpsePlundering[corpsePlunderingRoll]);
+Console.WriteLine(corpsePlundering[corpsePlunderingRoll]);
