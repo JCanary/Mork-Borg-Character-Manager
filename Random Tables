@@ -1,13 +1,5 @@
 var dice = new Random();
 
-var randomAbilitySelection = new Dictionary<int, string>
-{
-    {0, "Agility"},
-    {1, "Presence"},
-    {2, "Strength"},
-    {3, "Toughness"}
-};
-
 var occultTreasures = new Dictionary<int, string>
 {
     {0, "ASH-GREY RING a finger-width wide. All that passes through is obliterated."},
@@ -55,34 +47,54 @@ var weather = new Dictionary<int, string>
     {11, "Gravelike cold"}
 };
 
-// Corpse Plundering Table, need to change randomization to happen when the result is called instead of at the start of the program
-int corpsePlunderingRoll = 15; //dice.Next(0, 36);
-if (corpsePlunderingRoll <= 5)
-{
-    corpsePlunderingRoll = 0;
-}
-else if (corpsePlunderingRoll >= 30)
-{
-
-    corpsePlunderingRoll = 30;
-}
-
+// Corpse Plundering Table, randomize when the table is called
+long corpsePlunderingRoll = dice.Next(0, 36);
+int brokenGlassDamage = 0;
 int witchHunter;
 string witchHunterResult = "";
-if (corpsePlunderingRoll == 15)
+int poopDamage = 0;
+int poopDuration = 0;
+var randomAbilitySelection = new Dictionary<int, string>
 {
-    witchHunter = dice.Next(0, 2);
-    switch (witchHunter)
-    {
-        case 0:
-            witchHunterResult = "liked";
-            break;
-        case 1:
-            witchHunterResult = "despised";
-            break;
-    }
+    {0, "Agility"},
+    {1, "Presence"},
+    {2, "Strength"},
+    {3, "Toughness"}
+};
+string randomAbilityResult = "";
+int silverResult = 0;
+
+switch (corpsePlunderingRoll)
+{
+    // First result selection
+    case <= 5:
+        corpsePlunderingRoll = 0;
+        break;
+    // Last result selection    
+    case > 29:
+        corpsePlunderingRoll = 30;
+        break;
+    // Result 9 randomization
+    case 9:
+        brokenGlassDamage = dice.Next(1, 3);
+        break;
+    case 15:
+        witchHunter = dice.Next(0, 2);
+        if (witchHunter == 0) witchHunterResult = "liked";
+       
+        else if (witchHunter == 1) witchHunterResult = "despised";
+        break;
+    case 23:
+        poopDamage = dice.Next(1, 3) + 1;
+        poopDuration = dice.Next(1, 5);
+        break;
+    case 25:
+        randomAbilityResult = randomAbilitySelection[dice.Next(0, 4)];
+        break;
+    case 30:
+        silverResult = dice.Next(60, 67);
+        break;
 }
-int randomAbilityResult = dice.Next(0, 4);
 
 var corpsePlundering = new Dictionary<int, string>
 {
@@ -90,7 +102,7 @@ var corpsePlundering = new Dictionary<int, string>
     {6, "Pot filled with extremely potent itching ointment."},
     {7, "Necklace of human teeth."},
     {8, "Bag of angry, venomous moths. Test Toughness DR6 or die."},
-    {9, $"Pocket full of broken glass, PC takes {dice.Next(1, 3)} damage."},
+    {9, $"Pocket full of broken glass, PC takes {brokenGlassDamage} damage."},
     {10, "Mad Manifesto. If read, test Presence DR12 or lose 1 Presence permenently from confusion."},
     {11, "Key to nearby locked door. Stolen."},
     {12, "Map to a weak but wealthy family's house."},
@@ -104,15 +116,12 @@ var corpsePlundering = new Dictionary<int, string>
     {20, "Bond. A local potentate owes the holder a sizable amount."},
     {21, "Death mask of one of the PCs"},
     {22, "The 'Water of Life.' Heals D8. Test Toughness DR10 or go blind. Highly alcoholic."},
-    {23, $"There was something very wrong with this one. Hands covered with something lukewarm, brown and acidic. Take {dice.Next(1, 3) + 1} damage and smell terrible for {dice.Next(1, 5)} days."},
+    {23, $"There was something very wrong with this one. Hands covered with something lukewarm, brown and acidic. Take {poopDamage} damage and smell terrible for {poopDuration} days."},
     {24, "Black Kergus dagger. 2D4 damage."},
-    {25, $"Labelled poison bottle. Test Toughness DR12 or lower {randomAbilitySelection[randomAbilityResult]}. This ability can be increased when your character is improved."},
-    {26, ""},
-    {27, ""},
-    {28, ""},
-    {29, ""},
-    {30, ""}
+    {25, $"Labelled poison bottle. Test Toughness DR12 or lower {randomAbilityResult}. This ability can be increased when your character is improved."},
+    {26, "Scalp with long black hair."},
+    {27, "Golden ball with an invisible seam, twists open."},
+    {28, "Bloodstained knuckle-duster."},
+    {29, "Two weighted dice."},
+    {30, $"{silverResult} silver."}
 };
-
-Console.WriteLine(corpsePlundering[corpsePlunderingRoll]);
-Console.WriteLine(corpsePlundering[corpsePlunderingRoll]);
