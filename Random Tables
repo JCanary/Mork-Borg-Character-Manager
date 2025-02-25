@@ -48,56 +48,60 @@ var weather = new Dictionary<int, string>
 };
 
 // Corpse Plundering Table, randomize when the table is called
-long corpsePlunderingRoll = dice.Next(0, 36);
-int brokenGlassDamage = 0;
-int witchHunter;
-string witchHunterResult = "";
-int poopDamage = 0;
-int poopDuration = 0;
-var randomAbilitySelection = new Dictionary<int, string>
+for (int i = 0; i < 100; i++)
 {
+    int corpsePlunderingRoll = dice.Next(0, 36);
+    int brokenGlassDamage = 0;
+    int witchHunter;
+    string witchHunterResult = "";
+    int poopDamage = 0;
+    int poopDuration = 0;
+    var randomAbilitySelection = new Dictionary<int, string>
+    {
     {0, "Agility"},
     {1, "Presence"},
     {2, "Strength"},
     {3, "Toughness"}
-};
-string randomAbilityResult = "";
-int silverResult = 0;
+    };
+    string randomAbilityResult = "";
+    int silverResult = 0;
 
-switch (corpsePlunderingRoll)
-{
-    // First result selection
-    case <= 5:
+    if (corpsePlunderingRoll <= 5)
+    {
         corpsePlunderingRoll = 0;
-        break;
-    // Last result selection    
-    case > 29:
+    }
+    else if (corpsePlunderingRoll > 30)
+    {
         corpsePlunderingRoll = 30;
-        break;
-    // Result 9 randomization
-    case 9:
-        brokenGlassDamage = dice.Next(1, 3);
-        break;
-    case 15:
-        witchHunter = dice.Next(0, 2);
-        if (witchHunter == 0) witchHunterResult = "liked";
-       
-        else if (witchHunter == 1) witchHunterResult = "despised";
-        break;
-    case 23:
-        poopDamage = dice.Next(1, 3) + 1;
-        poopDuration = dice.Next(1, 5);
-        break;
-    case 25:
-        randomAbilityResult = randomAbilitySelection[dice.Next(0, 4)];
-        break;
-    case 30:
-        silverResult = dice.Next(60, 67);
-        break;
-}
+    }
 
-var corpsePlundering = new Dictionary<int, string>
-{
+    switch (corpsePlunderingRoll)
+    {
+        case 9:
+            brokenGlassDamage = dice.Next(1, 3);
+            break;
+        case 15:
+            witchHunter = dice.Next(0, 2);
+            if (witchHunter == 0) witchHunterResult = "liked";
+
+            else if (witchHunter == 1) witchHunterResult = "despised";
+            break;
+        case 23:
+            poopDamage = dice.Next(1, 3) + 1;
+            poopDuration = dice.Next(1, 5);
+            break;
+        case 25:
+            randomAbilityResult = randomAbilitySelection[dice.Next(0, 4)];
+            break;
+        case 30:
+            silverResult = dice.Next(60, 67);
+            break;
+        default:
+            break;
+    }
+
+    var corpsePlundering = new Dictionary<int, string>
+    {
     {0, "The remains of something worthless crumbles in your hands."},
     {6, "Pot filled with extremely potent itching ointment."},
     {7, "Necklace of human teeth."},
@@ -124,4 +128,8 @@ var corpsePlundering = new Dictionary<int, string>
     {28, "Bloodstained knuckle-duster."},
     {29, "Two weighted dice."},
     {30, $"{silverResult} silver."}
-};
+    };
+
+
+    Console.WriteLine(corpsePlundering[corpsePlunderingRoll]);
+}
