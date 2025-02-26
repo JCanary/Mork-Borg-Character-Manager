@@ -133,3 +133,13 @@ for (int i = 0; i < 100; i++)
 
     Console.WriteLine(corpsePlundering[corpsePlunderingRoll]);
 }
+
+// Starting items tables
+
+var startingArmor = new Dictionary<int, string>
+{
+    {0, "No armor (tier 0)"},
+    {1, "Light (fur, padded cloth, leather, etc. -D2 damage, tier 1) 20s"},
+    {2, "Medium armor (scale, mail, etc. -D4 damage, tier 2) 100s: DR +2 on Agility tests including defense."},
+    {3, "Heavy armor (splint, plate, etc. -D6 damage, tier 3) 200s: DR +4 on Agility tests, defense is DR +2. A shield: -1 damage, 20s"}
+};
