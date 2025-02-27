@@ -158,7 +158,7 @@ namespace RandomTables
             return corpsePlundering[corpsePlunderingRoll];
        }
 
-       public string startingArmor()
+       public string StartingArmor()
        {
             var dice = new Random();
 
@@ -171,6 +171,27 @@ namespace RandomTables
             };
 
             return startingArmor[dice.Next(0, 4)];
+       }
+
+       public string StartingWeapon()
+       {
+            var dice = new Random();
+
+            var startingWeapon = new Dictionary<int, string>
+            {
+                {0, "Femur D4"},
+                {0, "Staff D4"},
+                {0, "Shortsword D4"},
+                {0, "Knife D4"},
+                {0, "Warhammer D6"},
+                {0, "Sword D6"},
+                {0, "Bow D6 with Presence + 10 arrows"},
+                {0, "Flail D8"},
+                {0, "Crossbow D8 with Presence + 10 bolts"},
+                {0, "Zweihander D10"}
+            };
+
+            return startingWeapon[dice.Next(0, 10)];
        }
     }
 }
