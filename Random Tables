@@ -2,8 +2,8 @@ namespace RandomTables
 {
     public class Tables
     {
-       public string OccultTreasures()
-       {
+        public string OccultTreasures()
+        {
             var dice = new Random();
 
             var occultTreasures = new Dictionary<int, string>
@@ -19,12 +19,12 @@ namespace RandomTables
                 {8, "BLACK CROWN OF THE CRIPPLED KING. Wearing this crooks your body as you become aware that you and every creature within 100 yards gain +10 to attack rolls but -10 to defence rolls. Rolls that go above 20 count as crits, and below 1 as fumbles. The worn crown can only be removed in the pale light of a full moon."},
                 {9, "Anyone wearing this ancient BLINDFOLD becomes invisible to those who breathe though undead attack them obsessively and nearby corpses awaken in moaning, unholy wrath."}
             };
-            
-            return occultTreasures[dice.Next(0, 10)];
-       }
 
-       public string TrapsAndDevilry()
-       {
+            return occultTreasures[dice.Next(0, 10)];
+        }
+
+        public string TrapsAndDevilry()
+        {
             var dice = new Random();
 
             var trapsAndDevilry = new Dictionary<int, string>
@@ -44,10 +44,10 @@ namespace RandomTables
             };
 
             return trapsAndDevilry[dice.Next(0, 12)];
-       }
+        }
 
-       public string Weather()
-       {
+        public string Weather()
+        {
             var dice = new Random();
 
             var weather = new Dictionary<int, string>
@@ -67,10 +67,10 @@ namespace RandomTables
             };
 
             return weather[dice.Next(0, 12)];
-       }
+        }
 
-       public string CorpsePlundering()
-       {
+        public string CorpsePlundering()
+        {
             var dice = new Random();
 
             int corpsePlunderingRoll = dice.Next(0, 36);
@@ -79,15 +79,15 @@ namespace RandomTables
             string witchHunterResult = "";
             int poopDamage = 0;
             int poopDuration = 0;
-            
+
             var randomAbilitySelection = new Dictionary<int, string>
             {
-            {0, "Agility"},
-            {1, "Presence"},
-            {2, "Strength"},
-            {3, "Toughness"}
+                {0, "Agility"},
+                {1, "Presence"},
+                {2, "Strength"},
+                {3, "Toughness"}
             };
-            
+
             string randomAbilityResult = "";
             int silverResult = 0;
 
@@ -127,39 +127,41 @@ namespace RandomTables
 
             var corpsePlundering = new Dictionary<int, string>
             {
-            {0, "The remains of something worthless crumbles in your hands."},
-            {6, "Pot filled with extremely potent itching ointment."},
-            {7, "Necklace of human teeth."},
-            {8, "Bag of angry, venomous moths. Test Toughness DR6 or die."},
-            {9, $"Pocket full of broken glass, PC takes {brokenGlassDamage} damage."},
-            {10, "Mad Manifesto. If read, test Presence DR12 or lose 1 Presence permenently from confusion."},
-            {11, "Key to nearby locked door. Stolen."},
-            {12, "Map to a weak but wealthy family's house."},
-            {13, "A hopeless amount of spiders."},
-            {14, "Metal cylinder with gunpowder and fuse. Roll a D6. 1-2 you lose a hand. 3-6 3D10 damage wherever it lands."},
-            {15, $"Known and {witchHunterResult} witch-hunter's face. Flayed."},
-            {16, "Note with PC's names. One is crossed out."},
-            {17, "Tortured pixie with torn-off winds and gouged out eyes."},
-            {18, "Map to a place that cannot possibly exist."},
-            {19, "Unmarked bottle with a liquid that shifts between red and green."},
-            {20, "Bond. A local potentate owes the holder a sizable amount."},
-            {21, "Death mask of one of the PCs"},
-            {22, "The 'Water of Life.' Heals D8. Test Toughness DR10 or go blind. Highly alcoholic."},
-            {23, $"There was something very wrong with this one. Hands covered with something lukewarm, brown and acidic. Take {poopDamage} damage and smell terrible for {poopDuration} days."},
-            {24, "Black Kergus dagger. 2D4 damage."},
-            {25, $"Labelled poison bottle. Test Toughness DR12 or lower {randomAbilityResult}. This ability can be increased when your character is improved."},
-            {26, "Scalp with long black hair."},
-            {27, "Golden ball with an invisible seam, twists open."},
-            {28, "Bloodstained knuckle-duster."},
-            {29, "Two weighted dice."},
-            {30, $"{silverResult} silver."}
+                {0, "The remains of something worthless crumbles in your hands."},
+                {6, "Pot filled with extremely potent itching ointment."},
+                {7, "Necklace of human teeth."},
+                {8, "Bag of angry, venomous moths. Test Toughness DR6 or die."},
+                {9, $"Pocket full of broken glass, PC takes {brokenGlassDamage} damage."},
+                {10, "Mad Manifesto. If read, test Presence DR12 or lose 1 Presence permenently from confusion."},
+                {11, "Key to nearby locked door. Stolen."},
+                {12, "Map to a weak but wealthy family's house."},
+                {13, "A hopeless amount of spiders."},
+                {14, "Metal cylinder with gunpowder and fuse. Roll a D6. 1-2 you lose a hand. 3-6 3D10 damage wherever it lands."},
+                {15, $"Known and {witchHunterResult} witch-hunter's face. Flayed."},
+                {16, "Note with PC's names. One is crossed out."},
+                {17, "Tortured pixie with torn-off winds and gouged out eyes."},
+                {18, "Map to a place that cannot possibly exist."},
+                {19, "Unmarked bottle with a liquid that shifts between red and green."},
+                {20, "Bond. A local potentate owes the holder a sizable amount."},
+                {21, "Death mask of one of the PCs"},
+                {22, "The 'Water of Life.' Heals D8. Test Toughness DR10 or go blind. Highly alcoholic."},
+                {23, $"There was something very wrong with this one. Hands covered with something lukewarm, brown and acidic. Take {poopDamage} damage and smell terrible for {poopDuration} days."},
+                {24, "Black Kergus dagger. 2D4 damage."},
+                {25, $"Labelled poison bottle. Test Toughness DR12 or lower {randomAbilityResult}. This ability can be increased when your character is improved."},
+                {26, "Scalp with long black hair."},
+                {27, "Golden ball with an invisible seam, twists open."},
+                {28, "Bloodstained knuckle-duster."},
+                {29, "Two weighted dice."},
+                {30, $"{silverResult} silver."}
             };
 
             return corpsePlundering[corpsePlunderingRoll];
-       }
+        }
 
-       public string StartingArmor()
-       {
+        public string StartingArmor()
+        {
+            bool hasScroll = false;
+
             var dice = new Random();
 
             var startingArmor = new Dictionary<int, string>
@@ -167,31 +169,105 @@ namespace RandomTables
                 {0, "No armor (tier 0)"},
                 {1, "Light (fur, padded cloth, leather, etc. -D2 damage, tier 1) 20s"},
                 {2, "Medium armor (scale, mail, etc. -D4 damage, tier 2) 100s: DR +2 on Agility tests including defense."},
-                {3, "Heavy armor (splint, plate, etc. -D6 damage, tier 3) 200s: DR +4 on Agility tests, defense is DR +2. A shield: -1 damage, 20s"}
+                {3, "Heavy armor (splint, plate, etc. -D6 damage, tier 3) 200s: DR +4 on Agility tests, defense is DR +2. A shield: -1 damage."}
             };
 
-            return startingArmor[dice.Next(0, 4)];
-       }
+            if (hasScroll)
+            {
+                return startingArmor[dice.Next(0, 2)];
+            }
+            else return startingArmor[dice.Next(0, 4)];
+        }
 
-       public string StartingWeapon()
-       {
+        public string StartingWeapon()
+        {
+            bool hasScroll = false;
+
             var dice = new Random();
 
             var startingWeapon = new Dictionary<int, string>
             {
                 {0, "Femur D4"},
-                {0, "Staff D4"},
-                {0, "Shortsword D4"},
-                {0, "Knife D4"},
-                {0, "Warhammer D6"},
-                {0, "Sword D6"},
-                {0, "Bow D6 with Presence + 10 arrows"},
-                {0, "Flail D8"},
-                {0, "Crossbow D8 with Presence + 10 bolts"},
-                {0, "Zweihander D10"}
+                {1, "Staff D4"},
+                {2, "Shortsword D4"},
+                {3, "Knife D4"},
+                {4, "Warhammer D6"},
+                {5, "Sword D6"},
+                {6, "Bow D6 with Presence + 10 arrows"},
+                {7, "Flail D8"},
+                {8, "Crossbow D8 with Presence + 10 bolts"},
+                {9, "Zweihander D10"}
             };
 
-            return startingWeapon[dice.Next(0, 10)];
-       }
+            if (hasScroll)
+            {
+                return startingWeapon[dice.Next(0, 6)];
+            }
+            else return startingWeapon[dice.Next(0, 10)];
+        }
+
+        // startingItems1 needs a user input option for choosing lower options on the list. needs to return whatever the selection end up being
+        public string StartingItem1()
+        {
+            var dice = new Random();
+
+            var startingItem1 = new Dictionary<int, string>
+            {
+                {0, "Nothing"},
+                {1, "Backpack for 7 normal-sized items."},
+                {2, "Sack for 10 normal-sized items."},
+                {3, "Small wagon, or either a (sack) or (backpack)."},
+                {4, "Donkey, not bad. Or choose a small (wagon), a (sack), or a (backpack)."},
+            };
+
+            return startingItem1[dice.Next(0, 6)];
+        }
+
+        public string StartingItem2()
+        {
+            var dice = new Random();
+
+            var startingItem2 = new Dictionary<int, string>
+            {
+                {0, "Rope 30 feet."},
+                {1, "Presence + 4 torches."},
+                {2, "Lantern with oil for Presence + 6 hours."},
+                {3, "Magnesium strip."},
+                {4, "Random unclean scroll."},
+                {5, "Sharp needle."},
+                {6, "Medicine chest Presence + 4 uses (stops bleeding/infection and heals D6 HP)."},
+                {7, "Metal file and lockpicks."},
+                {8, "Bear trap (Presence DR14 to spot, D8 damage)."},
+                {9, "Bomb (sealed bottle, D10 damage)."},
+                {10, "A bottle of red poison D4 doses (Toughness DR12 or D10 damage)."},
+                {11, "Silver crucifix."}
+            };
+
+            return startingItem2[dice.Next(0, 12)];
+        }
+
+        public string StartingItem3()
+        {
+            var dice = new Random();
+
+            var startingItem3 = new Dictionary<int, string>
+            {
+                {0, "1 life elixer D4 doses (heals D6 HP and removes infection)."},
+                {1, "Random sacred scroll."},
+                {2, "Small but vicious dog (D6 + 2 HP, bite D4, only obeys you)."},
+                {3, "D4 monkeys that ignore but love you (D4 + 2 HP, punch/bite D4)."},
+                {4, "Exquisite perfume worth 25s."},
+                {5, "Toolbox 10 nails, tongs, hammer, small saw, and drill."},
+                {6, "Heavy chain 15 feet."},
+                {7, "Grapping hook."},
+                {8, "Shield (-1 HP damage or have the shield break to ignore one attack)."},
+                {9, "Crowbar (D4 damage)."},
+                {10, "Lard (may function as 5 meals in a pinch)."},
+                {11, "Tent."}
+                
+            };
+
+            return startingItem3[dice.Next(0,12)];
+        }
     }
 }
