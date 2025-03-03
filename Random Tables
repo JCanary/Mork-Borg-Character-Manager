@@ -266,8 +266,39 @@ namespace RandomTables
                 {11, "Tent."}
                 
             };
-
+            
             return startingItem3[dice.Next(0,12)];
+        }
+
+        public string BasilisksDemand()
+        {
+            var dice = new Random();
+
+            var basilisksDemand = new Dictionary<int, string>
+            {
+                {0, "A sword that has killed exactly one dozen times."},
+                {1, "A widower's wedding ring."},
+                {2, "Silver form a sinner's grave."},
+                {3, "Eyes that have seen the Shimmering Fields."},
+                {4, "The year's first-born goat."},
+                {5, "Blutday bread."},
+                {6, "The cuticle of an exceuted innocent."},
+                {7, "A troll's heart valves."},
+                {8, "A dagger onto which the condemned carved their victims' name."},
+                {9, "Rare anti-obsidian from the Urilian crypts."},
+                {10, "The forbidden brew of the hermit of Terion."},
+                {11, "An orgh-maggot from the ice of Kergus."},
+                {12, "A body mutilated by those who loved it in life."},
+                {13, "Joy's lampoon written in blood."},
+                {14, "The gall of a Chrypt-vulture."},
+                {15, "Moss upon which a dying man ha slept."},
+                {16, "A child born with the third eye."},
+                {17, "A body drowned in Lake Onda."},
+                {18, "The rear molar of the Gluttonous."},
+                {19, "Gems from overflowing pockets."}
+            };
+
+            return basilisksDemand[dice.Next(0, 20)];
         }
     }
 }
