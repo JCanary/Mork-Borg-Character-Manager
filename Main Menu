@@ -1,4 +1,20 @@
-Console.WriteLine("Mork Borg Character Tracker");
-Console.WriteLine("(New) Character or (Load) Existing Character?: ");
-string? selection = Console.ReadLine();
-Console.WriteLine(selection);
+using RandomTables;
+
+class MorkBorgManager
+{
+    public static void Main()
+    {
+        var tables = new Tables();
+
+        Console.WriteLine(tables.OccultTreasures());
+        Console.WriteLine(tables.TrapsAndDevilry());
+        Console.WriteLine(tables.Weather());
+        Console.WriteLine(tables.CorpsePlundering());
+        Console.WriteLine(tables.StartingArmor());
+        Console.WriteLine(tables.StartingWeapon());
+        Console.WriteLine(tables.StartingItem1());
+        Console.WriteLine(tables.StartingItem2());
+        Console.WriteLine(tables.StartingItem3());
+        Console.WriteLine(tables.BasilisksDemand());
+    }
+}
