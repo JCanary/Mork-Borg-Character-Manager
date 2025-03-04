@@ -435,5 +435,36 @@ namespace RandomTables
 
             return badHabits[dice.Next(0, 20)];        
         }
+
+        public string TroublingTales()
+        {
+            var dice = new Random();
+
+            var troublingTales = new Dictionary<int, string>
+            {
+                {0, "Pursued for manslaughter. There is a bounty."},
+                {1, "In massive debt. The debt is being traded successively to more ruthless groups."},
+                {2, "Have a rare, sought after item."},
+                {3, "Have a cursed never healing wound."},
+                {4, "Had an illegal, immoral, and secret affair with a member of the royal family. Has proof."},
+                {5, "Escaped cult member. Terrified and paranoid. Other cultists are everywhere."},
+                {6, "An identity theif who recently killed and replaced this person."},
+                {7, "Banished and disowned for unspecific deeds. Can never go home."},
+                {8, "Deserted military after witnessing a massacre, bounty on head. Hunted by former friends."},
+                {9, "Very recently murdered a close relative. Very recently."},
+                {10, "A puzzle cube has been calibrated incorrectly (or has it?), awakening a slumbering abomination."},
+                {11, "Evil creatures love the scent of your spoor and are drawn to it, bringing disaster in your wake."},
+                {12, "A battle wound left a shard of metal slowly inching closer to your heart. Every day there is a 2% chance it reaches it."},
+                {13, "Violence forced you into the wilderness. You think waving trees are whispering. You talk to, scream at, attack trees."},
+                {14, "Cursed to share the nightmares of others, you sleep far, far away."},
+                {15, "At permanent war with all corvids. No contact without some violence. You carry a sling."},
+                {16, "After dreaming of an underground temple to a forgotten god you understand the songs of insects and worms."},
+                {17, "Being tracked and observed by a golem after an agreement which you know has been wiped from your mind."},
+                {18, "'Burn or be burned' is the fate you accept."},
+                {19, "Your flesh heals twice as fast, but your companions twice as slow. You see a many-eyed 'guardian angel'"}
+            };
+
+            return troublingTales[dice.Next(0, 20)];
+        }
     }
 }
