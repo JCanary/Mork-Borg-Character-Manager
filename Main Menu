@@ -6,15 +6,20 @@ class MorkBorgManager
     {
         var tables = new Tables();
 
-        Console.WriteLine(tables.OccultTreasures());
-        Console.WriteLine(tables.TrapsAndDevilry());
-        Console.WriteLine(tables.Weather());
-        Console.WriteLine(tables.CorpsePlundering());
-        Console.WriteLine(tables.StartingArmor());
-        Console.WriteLine(tables.StartingWeapon());
-        Console.WriteLine(tables.StartingItem1());
-        Console.WriteLine(tables.StartingItem2());
-        Console.WriteLine(tables.StartingItem3());
-        Console.WriteLine(tables.BasilisksDemand());
+        Console.WriteLine($"Occult Treasure: {tables.OccultTreasures()}");
+        Console.WriteLine($"Traps: {tables.TrapsAndDevilry()}");
+        Console.WriteLine($"Weather: {tables.Weather()}");
+        Console.WriteLine($"Plundering: {tables.CorpsePlundering()}");
+        Console.WriteLine($"Armor: {tables.StartingArmor()}");
+        Console.WriteLine($"Weapon: {tables.StartingWeapon()}");
+        Console.WriteLine($"Starting item 1: {tables.StartingItem1()}");
+        Console.WriteLine($"Starting item 2: {tables.StartingItem2()}");
+        Console.WriteLine($"Starting item 3: {tables.StartingItem3()}");
+        Console.WriteLine($"Basilisk's Demand: {tables.BasilisksDemand()}");
+        Console.WriteLine($"Unclean Scroll: {tables.UncleanScrolls()}");
+        Console.WriteLine($"Sacred Scroll: {tables.SacredScrolls()}");
+        Console.WriteLine($"Terrible Trait: {tables.TerribleTraits()}");
+        Console.WriteLine($"Broken Bodies: {tables.BrokenBodies()}");
+        Console.WriteLine($"Bad Habit: {tables.BadHabits()}");
     }
 }
