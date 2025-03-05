@@ -466,5 +466,23 @@ namespace RandomTables
 
             return troublingTales[dice.Next(0, 20)];
         }
+
+        //Fanged Deserter Tables
+        public string EarliestMemories()
+        {
+            var dice = new Random();
+
+            var earliestMemories = new Dictionary<int, string>
+            {
+                {0, "A burnt-black building in Sarkash. Your home?"},
+                {1, "A derelict rotting ship rolling endlessly across a grey sea."},
+                {2, "A brothel in Schleswig. Quite a friendly environment."},
+                {3, "Sleeping with dogs in the corner of an inn, waiting for someone to return."},
+                {4, "Following an army in eastern Wastland."},
+                {5, "Suckling a wolf in the wild of Bergen Chrypt."}
+            };
+
+            return earliestMemories[dice.Next(0, 6)];
+        }
     }
 }
